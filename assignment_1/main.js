@@ -17,12 +17,33 @@ function fibs(number) {
 
 // Recursive approach
 function fibsRec(number) {
-  if (number === 0) {
-    return 0;
-  } else if (number === 1 || number === 2) {
-    return 1;
-  } else {
+  // Starting values
+  let firstPreceding = 0;
+  let lastPreceding = 1;
+  let start = 0;
+  let array = [];
+
+  // Helper function that uses already calculated values to reduce the number of recursive calls to n
+  function fibsRecBottomUp(counter, firstPrec, lastPrec) {
+    if (counter > number) {
+      return array;
+    }
+    if (counter === 0) {
+      array.push(0);
+    } else if (counter === 1) {
+      array.push(1);
+    } else {
+      array.push(firstPrec + lastPrec);
+    }
+    fibsRecBottomUp(
+      counter + 1,
+      array[array.length - 1],
+      array[array.length - 2]
+    );
   }
+  // Get every sequence starting from zero
+  fibsRecBottomUp(start, firstPreceding, lastPreceding);
+  return array;
 }
 
-console.log(fibs(TEST_NUMBERS[4]));
+console.log(fibsRec(TEST_NUMBERS[4]));
