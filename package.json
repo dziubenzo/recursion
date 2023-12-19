@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon assignment_1/main.js"
+    "assignment1": "nodemon assignment_1/main.js",
+    "assignment2": "nodemon assignment_2/main.js"
   },
   "keywords": [],
   "author": "",
