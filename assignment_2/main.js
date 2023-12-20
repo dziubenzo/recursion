@@ -21,8 +21,8 @@ function mergeSort(array) {
     let rightSide = mergeSort(array.slice(array.length / 2));
     // Compare both sorted halves one by one (merge them)/
     // Pick the smallest or the last one
-    // Remove it from the given half and add it to sortedArray
-    // Continue until all halves are empty
+    // Remove it from the respective half and add it to sortedArray
+    // Continue until both halves are empty and return sortedArray
     let sortedArray = [];
     while (leftSide.length + rightSide.length > 0) {
       if (leftSide[0] <= rightSide[0] || rightSide.length === 0) {
