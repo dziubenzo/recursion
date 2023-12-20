@@ -11,11 +11,18 @@ const testArray50 = [
 const withDuplicates = [1, 2, 35, 2, 5, 4, 14, 1, 2];
 
 function mergeSort(array) {
+  // Base case, which is an array of one
   if (array.length === 1) {
     return array;
   } else {
+    // Sort left half of the array
     let leftSide = mergeSort(array.slice(0, array.length / 2));
+    // Sort right half of the array
     let rightSide = mergeSort(array.slice(array.length / 2));
+    // Compare both sorted halves one by one (merge them)/
+    // Pick the smallest or the last one
+    // Remove it from the given half and add it to sortedArray
+    // Continue until all halves are empty
     let sortedArray = [];
     while (leftSide.length + rightSide.length > 0) {
       if (leftSide[0] <= rightSide[0] || rightSide.length === 0) {
@@ -28,4 +35,4 @@ function mergeSort(array) {
   }
 }
 
-console.log(mergeSort(testArray50));
+console.log(mergeSort(unsortedArray));
