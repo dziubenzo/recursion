@@ -19,10 +19,10 @@ function mergeSort(array) {
     let leftSide = mergeSort(array.slice(0, array.length / 2));
     // Sort right half of the array
     let rightSide = mergeSort(array.slice(array.length / 2));
-    // Compare numbers in both halves (merge them one by one)
+    // Compare numbers in both halves (merge both arrays one number at a time)
     // Pick the smaller number or the only number remaining in both halves
     // Remove it from the respective half, convert it back to a number and add it to sortedArray
-    // Continue until both halves are empty and return sortedArray
+    // Continue until both halves are empty
     let sortedArray = [];
     while (leftSide.length + rightSide.length > 0) {
       if (leftSide[0] <= rightSide[0] || rightSide.length === 0) {
@@ -35,4 +35,4 @@ function mergeSort(array) {
   }
 }
 
-console.log(mergeSort(unsortedArray));
+console.log(mergeSort(testArray50));
